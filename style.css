@@ -1,0 +1,98 @@
+/* Penjelasan: Mengatur dasar halaman web */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #fce4ec; /* Background pink sangat muda */
+    color: #333;
+}
+
+/* Penjelasan: Membuat kontainer utama memenuhi layar (Web lebar) */
+.wrapper-web {
+    display: flex; /* Membagi jadi kolom kiri dan kanan */
+    min-height: 100vh; /* Tinggi minimal se-layar penuh */
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 0 50px rgba(0,0,0,0.1);
+}
+
+/* ——— CSS BAGIAN KIRI ——— */
+.sidebar-kiri {
+    flex: 1; /* Ukuran 1 bagian */
+    background-color: #ff69b4; /* Pink utama */
+    color: white;
+    padding: 50px 30px;
+    text-align: center;
+    border-right: 5px solid #ffd700; /* Garis emas pemisah */
+}
+
+.bingkai-foto {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 6px solid white;
+    overflow: hidden;
+    margin: 0 auto 20px;
+}
+
+.foto-profil {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Agar foto dari laptop tidak gepeng */
+}
+
+.nama { font-size: 24px; margin-bottom: 10px; }
+.tagline { font-size: 14px; opacity: 0.9; margin-bottom: 30px; }
+
+/* ——— CSS BAGIAN KANAN ——— */
+.konten-kanan {
+    flex: 2; /* Ukuran 2 bagian (lebih lebar dari kiri) */
+    padding: 50px;
+}
+
+.blok { margin-bottom: 40px; }
+
+.judul-pink {
+    color: #d81b60;
+    border-bottom: 2px solid #ffb6c1;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* Styling Tag Skill */
+.tag-container { display: flex; flex-wrap: wrap; gap: 10px; }
+.tag {
+    background: #ffe4e1;
+    color: #d14780;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Styling Kotak Proyek */
+.grid-proyek {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.kartu-proyek {
+    padding: 20px;
+    border: 1px solid #ffb6c1;
+    border-radius: 10px;
+}
+
+.kartu-proyek h3 { color: #ff69b4; margin-bottom: 5px; }
+
+/* Responsive: Jika dibuka di HP akan tumpuk ke bawah */
+@media (max-width: 768px) {
+    .wrapper-web { flex-direction: column; }
+    .sidebar-kiri { border-right: none; border-bottom: 5px solid #ffd700; }
+}
